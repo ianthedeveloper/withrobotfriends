@@ -2,7 +2,9 @@ import React from 'react';
 
 const SearchBox = () => {
     return(
-        <imput type="search" placeholder="search robot" />
+        <div>
+            <imput type="search" placeholder="search robot" />
+        </div>
     )
 }
 

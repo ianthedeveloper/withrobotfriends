@@ -4,12 +4,12 @@ import SearchBox from './SearchBox';
 import CardList from './CardList';
 import { robots } from './robots';
 
-class App extends Component(){
+class App extends Component{
     constructor(){
         super();
         this.state={
             robots: robots,
-            searchfield: ' '
+            searchfield: ''
         }
     }
 
@@ -19,7 +19,7 @@ class App extends Component(){
             <div>
                 <h1>WithRobotFriends</h1>
                 <SearchBox/>
-                <CardList/>
+                <CardList robots = {this.state.robots}/>
             </div>
         )
     }

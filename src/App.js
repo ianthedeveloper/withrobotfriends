@@ -16,7 +16,7 @@ class App extends Component{
 
     render(){
         return(
-            <div>
+            <div className='tc bg-lightest-red'>
                 <h1>WithRobotFriends</h1>
                 <SearchBox/>
                 <CardList robots = {this.state.robots}/>

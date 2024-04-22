@@ -3,7 +3,7 @@ import React from 'react';
 const SearchBox = () => {
     return(
         <div>
-            <imput type="search" placeholder="search robot" />
+            <input className='pa2 ba ba--orange bg-lightest-blue tc'  type="search" placeholder="search robot" />
         </div>
     )
 }

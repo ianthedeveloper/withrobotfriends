@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import './App.css';
-import SearchBox from './SearchBox';
-import CardList from './CardList';
+import SearchBox from '../components/SearchBox';
+import CardList from '../components/CardList';
 import {robots} from './robots';
-import Scroll from './Scroll';
+import Scroll from '../components/Scroll';
 
 
 // Introducing State

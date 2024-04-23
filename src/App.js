@@ -4,22 +4,35 @@ import SearchBox from './SearchBox';
 import CardList from './CardList';
 import { robots } from './robots';
 
+
+// Introducing State
 class App extends Component{
     constructor(){
         super();
         this.state={
-            robots: robots,
+            robots: [],
             searchfield: ''
         }
     }
 
-    
+    // Introducing a Lifecycle Method so as to have ability to intergarate a users API
+    // NB: Life-cycle Methods don't have the same syntax as arrow functions
+    // componentDidMount executes after render function
+    componentDidMount(){
+        fetch("https://jsonplaceholder.typicode.com/users")
+        .then((response) => response.json())
+        .then((users) => this.setState({robots: users}))
+
+    }
+
+    // Function that exectutes the 'searchfield' state
     onSearchChange = (event) => {
         this.setState({searchfield: event.target.value})
     }
 
 
     render(){
+        // App Component(parent), filteres robots based on SearchBox input
         const filteredRobots = this.state.robots.filter((robot, i) => {
             return robots[i].name.toLowerCase().includes(this.state.searchfield.toLowerCase())
         })
@@ -31,6 +44,7 @@ class App extends Component{
                 <CardList robots = {filteredRobots}/>
             </div>
         )
+
     }
 }
 

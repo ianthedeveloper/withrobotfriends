@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import './App.css';
 import SearchBox from './SearchBox';
 import CardList from './CardList';
-import { robots } from './robots';
+import {robots} from './robots';
+import Scroll from './Scroll';
 
 
 // Introducing State
@@ -37,6 +38,7 @@ class App extends Component{
             return robots[i].name.toLowerCase().includes(this.state.searchfield.toLowerCase())
         })
 
+        //If the API request time equals 0, a 'LOADING' text will get displayed
         if (this.state.robots.length === 0){
             return <h1>LOADING: </h1>
         }else{
@@ -44,7 +46,9 @@ class App extends Component{
                 <div className='tc bg-lightest-red'>
                     <h1>WithRobotFriends</h1>
                     <SearchBox searchChange = {this.onSearchChange} />
-                    <CardList robots = {filteredRobots}/>
+                    <Scroll>
+                        <CardList robots = {filteredRobots}/>
+                    </Scroll>
                 </div>
             )
         }

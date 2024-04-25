@@ -4,6 +4,7 @@ import SearchBox from '../components/SearchBox';
 import CardList from '../components/CardList';
 import {robots} from '../robots';
 import Scroll from '../components/Scroll';
+import ErrorBoundary from '../components/ErrorBoundary';
 
 
 // Introducing State
@@ -48,7 +49,9 @@ class App extends Component{
                     <h1>WithRobotFriends</h1>
                     <SearchBox searchChange = {this.onSearchChange} />
                     <Scroll>
-                        <CardList robots = {filteredRobots}/>
+                        <ErrorBoundary>
+                            <CardList robots = {filteredRobots}/>
+                        </ErrorBoundary>
                     </Scroll>
                 </div>
             )

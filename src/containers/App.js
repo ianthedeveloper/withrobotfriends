@@ -33,13 +33,14 @@ class App extends Component{
 
 
     render(){
+        const {robots, searchfield} = this.state;
         // App Component(parent), filteres robots based on SearchBox input
-        const filteredRobots = this.state.robots.filter((robot, i) => {
-            return robots[i].name.toLowerCase().includes(this.state.searchfield.toLowerCase())
+        const filteredRobots = robots.filter((robot, i) => {
+            return robots[i].name.toLowerCase().includes(searchfield.toLowerCase())
         })
 
         //If the API request time equals 0, a 'LOADING' text will get displayed
-        if (this.state.robots.length === 0){
+        if (robots.length === 0){
             return <h1>LOADING: </h1>
         }else{
             return(

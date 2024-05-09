@@ -42,7 +42,7 @@ class App extends Component{
 
         //If the API request time equals 0, a 'LOADING' text will get displayed
         if (robots.length === 0){
-            return <h1>LOADING: </h1>
+            return <h1>Getting Ready:</h1>
         }else{
             return(
                 <div className='tc bg-lightest-red'>

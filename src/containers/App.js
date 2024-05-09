@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import SearchBox from '../components/SearchBox';
 import CardList from '../components/CardList';
@@ -24,7 +24,6 @@ class App extends Component{
         fetch("https://jsonplaceholder.typicode.com/users")
         .then((response) => response.json())
         .then((users) => this.setState({robots: users}))
-
     }
 
     // Function that exectutes the 'searchfield' state
@@ -56,7 +55,6 @@ class App extends Component{
                 </div>
             )
         }
-
     }
 }
 
